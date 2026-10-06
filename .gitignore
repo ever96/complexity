@@ -44,3 +44,8 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+.wrangler/
+wrangler.toml
+test.tar.gz
+node_modules/
