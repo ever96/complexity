@@ -1,0 +1,46 @@
+# === DATOS PESADOS — nunca al repo ===
+data/
+*.duckdb
+*.duckdb.wal
+*.db
+*.csv
+*.parquet
+*.zip
+*.gz
+
+# === ENTORNOS VIRTUALES ===
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# === NODE ===
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# === BUILDS ===
+frontend/dist/
+frontend/build/
+.vite/
+dist/
+build/
+
+# === VERCEL ===
+.vercel/
+
+# === SECRETOS ===
+.env
+.env.local
+.env.production
+
+# === SISTEMA ===
+.DS_Store
+Thumbs.db
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
