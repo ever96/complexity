@@ -15,4 +15,4 @@ COPY backend/ .
 ENV NODE_ENV=production
 EXPOSE 8080
 
-CMD ["sh", "-c", "mkdir -p /data && if [ ! -f /data/econofold.duckdb ]; then echo '→ Descargando DB (~3 GB)...'; curl -L --fail -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' -o /data/econofold.duckdb \"$DB_URL\" && echo '✓ DB lista'; else echo '✓ DB ya existe'; fi && node server.js"]
+CMD ["sh", "-c", "rm -f /data/econofold.duckdb && mkdir -p /data && echo '→ Descargando DB (~3 GB)...'; curl -L --fail -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' -o /data/econofold.duckdb \"$DB_URL\" && echo '✓ DB lista' && node server.js"]
