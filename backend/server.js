@@ -8,6 +8,10 @@ import productsRouter from './routes/products.js';
 import graphRouter from './routes/graph.js';
 import treemapRouter from './routes/treemap.js';
 
+// Fix: DuckDB devuelve COUNT() como BigInt, y JSON.stringify no lo serializa.
+// Convertimos BigInt a Number automáticamente en toda la app.
+BigInt.prototype.toJSON = function () { return Number(this); };
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 const NODE_ENV = process.env.NODE_ENV || 'development';
